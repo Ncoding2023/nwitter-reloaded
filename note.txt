@@ -1,0 +1,32 @@
+20240810
+.
+1 [🔥 2023 Update 🔥] Introduction.
+파이어베이스 대한 설명
+2 [🔥 2023 Update 🔥] Setup
+환경설정
+.0 Installation
+nwitter-reloaded
+프로잭트명
+npx create-react-app nwitter-reloaded
+react
+타임스크립트 -swc
+
+npm run dev
+실행
+
+https://github.com/Ncoding2023/nwitter-reloaded.git
+Git 주소
+
+npm create vite@latest
+npm i react-router-dom@6.14.2
+
+npm i styled-reset
+npm i styled-components@6.0.7 
+npm i @types/styled-components -D
+
+Git init 
+Git 연결
+
+git remote add origin https://github.com/Ncoding2023/nwitter-reloaded.git
+해당 url에 저장
+
