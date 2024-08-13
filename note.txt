@@ -48,3 +48,14 @@ package.json에 선언
 // wait for firebase
     setTimeout(() => setIsLoading(false),2000);
     로딩,2초 주고 실행
+
+2.3 Firebase Project
+파이어베이스 회원가입 및 스크립트 가져오기
+3.0 Setup 
+파이어베이스 환경설정
+
+
+
+
+
+
