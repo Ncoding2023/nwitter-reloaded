@@ -33,6 +33,6 @@ git remote add origin https://github.com/Ncoding2023/nwitter-reloaded.git
 20240813
 .1 Routing
 extensions => vscode-styled-components 다운로드
-
+npm i gh-pages
 
 
