@@ -30,3 +30,9 @@ Git 연결
 git remote add origin https://github.com/Ncoding2023/nwitter-reloaded.git
 해당 url에 저장
 
+20240813
+.1 Routing
+extensions => vscode-styled-components 다운로드
+
+
+
