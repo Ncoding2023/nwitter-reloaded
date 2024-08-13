@@ -44,3 +44,7 @@ package.json에 선언
   "homepage": "https://Ncoding2023.github.io/react_beginner"
    - 해당 url로 변경
 
+.2 LoadingScreen
+// wait for firebase
+    setTimeout(() => setIsLoading(false),2000);
+    로딩,2초 주고 실행
