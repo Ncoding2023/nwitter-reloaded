@@ -34,5 +34,13 @@ git remote add origin https://github.com/Ncoding2023/nwitter-reloaded.git
 .1 Routing
 extensions => vscode-styled-components 다운로드
 npm i gh-pages
+브런치 설치
 
+
+package.json에 선언
+ "deploy": "gh-pages -d build",
+ 마지막 줄
+,
+  "homepage": "https://Ncoding2023.github.io/react_beginner"
+   - 해당 url로 변경
 
