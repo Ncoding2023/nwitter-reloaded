@@ -58,4 +58,17 @@ extensions => ES7+ React/Redux/React-Native snippets 다운로드
 웹에서 에러 아이콘 표시 -> 변화가 없다...
 스타일 작성
 
+20240815리액트 
+3.2 Create Account
+credentials
+HTTP 요청 시 쿠키나 인증 정보를 포함할지 여부를 제어하는 설정
+보안과 인증된 세션 관리에서 중요한 역할
+useNavigate
+리액트 라우터(React Router)에서 사용되는 훅으로, 컴포넌트 내에서 프로그래밍 방식으로 페이지 이동(네비게이션)을 수행할 때 사용
+파이어베이스 Authentication에서 제공하는 메서드로,
+createUserWithEmailAndPassword
+ 이메일과 비밀번호를 사용해 새로운 사용자를 등록하는 기능을 수행
+updateProfile
+ 사용자의 프로필 정보(예: 이름, 사진 URL 등)를 업데이트하는 데 사용
+
 
