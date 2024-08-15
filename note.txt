@@ -91,5 +91,26 @@ add auth-components.ts
 
 create-account.tsx를 login.tsx에 복사하며
 name관련만 제거
+3.5 Github Login
+파이어베이스에서 github와 연동
+https://github.com/settings/applications
+
+Application name*
+Nwitter-Reloaded!
+Homepage URL*
+https://nwitter-reloaded-51a15.firebaseapp.com/
+Authorization callback URL*
+https://nwitter-reloaded-51a15.firebaseapp.com/__/auth/handler
+체크 없음
+
+Client ID
+Ov23li0WYrAznD4mUe1r
+Client secrets - 비밀번호 입력 후 발급
+c248ddd815886a6237a0503848745e7921d36c25
+
+add github-mark.svg
+add github-bts.tsx
+GithubButton()
+signInWithPopup으로 연동 및 연결
 
 

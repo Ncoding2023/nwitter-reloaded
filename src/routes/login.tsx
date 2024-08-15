@@ -4,6 +4,7 @@ import { FirebaseError } from "firebase/app";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
 import { Error, Form, Input, Switcher, Title, Wrapper, } from "../components/auth-components";
+import GithubButton from "../components/github-btn";
 
 export default function Loing() {
   const navigate = useNavigate();
@@ -64,6 +65,7 @@ export default function Loing() {
         Don't have an account? 
         <Link to="/create-account">Create &rarr;</Link>
       </Switcher>
+      <GithubButton />
     </Wrapper>
   );
 }
