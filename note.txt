@@ -84,3 +84,12 @@ Navigate
 리액트 라우터(React Router)에서 사용되는 컴포넌트로, 
 특정 경로로 프로그래밍 방식으로 리디렉션할 때 사용하며,
  페이지를 렌더링하지 않고 사용자를 자동으로 다른 경로로 이동시키는 데 유용
+
+3.4 Log In
+add auth-components.ts
+.ts파일은 타입스크립트 문법만 사용가능
+
+create-account.tsx를 login.tsx에 복사하며
+name관련만 제거
+
+
