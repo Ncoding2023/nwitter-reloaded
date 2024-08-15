@@ -1,3 +1,6 @@
+npm run deploy
+glt 올리기
+
 20240810
 .
 1 [🔥 2023 Update 🔥] Introduction.
@@ -65,10 +68,19 @@ HTTP 요청 시 쿠키나 인증 정보를 포함할지 여부를 제어하는 �
 보안과 인증된 세션 관리에서 중요한 역할
 useNavigate
 리액트 라우터(React Router)에서 사용되는 훅으로, 컴포넌트 내에서 프로그래밍 방식으로 페이지 이동(네비게이션)을 수행할 때 사용
+
 파이어베이스 Authentication에서 제공하는 메서드로,
 createUserWithEmailAndPassword
  이메일과 비밀번호를 사용해 새로운 사용자를 등록하는 기능을 수행
 updateProfile
  사용자의 프로필 정보(예: 이름, 사진 URL 등)를 업데이트하는 데 사용
 
-
+3.3 Protected Routes
+add Protected-route
+children
+컴포넌트가 렌더링할 때 부모 컴포넌트의 자식 요소들을 가리키는 특별한 prop
+부모 컴포넌트가 감싸고 있는 자식 컴포넌트나 요소들을 유연하게 렌더링
+Navigate
+리액트 라우터(React Router)에서 사용되는 컴포넌트로, 
+특정 경로로 프로그래밍 방식으로 리디렉션할 때 사용하며,
+ 페이지를 렌더링하지 않고 사용자를 자동으로 다른 경로로 이동시키는 데 유용
