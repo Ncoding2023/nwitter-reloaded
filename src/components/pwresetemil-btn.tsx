@@ -146,12 +146,12 @@ const closeButtonStyle = {
   marginTop: '20px',
 };
 
-// const appStyle = {
-//   display: 'flex',
-//   justifyContent: 'center',
-//   alignItems: 'center',
-//   height: '100vh',
-// };
+const appStyle = {
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  height: '100vh',
+};
 
 const triggerButtonStyle = {
   marginTop: `50px`,
