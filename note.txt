@@ -113,4 +113,15 @@ add github-bts.tsx
 GithubButton()
 signInWithPopup으로 연동 및 연결
 
+3.6 Recap 
+파이어 베이스에서 타 홈페이지 계정을 연동할때 각 회사 명으로 함수로
+ 작성하며 import끝에 cordova가 아닌 것으로 연동 *주의
+코드 챌린지
+sendPasswordResetEmail 사용
+이메일로 비밀번호 재설정하는 버튼 추가
+쳇지피티를 사용하며 스타일 부분은 다른 버전으로 구현되어 있다.
+togglePopup으로 구현하며 주로 스타일 부분 작업
+
+
+
 
