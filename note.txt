@@ -144,3 +144,14 @@ add post-tweet-form.tsx
 글작성 및 이미지 파일 업로드
 layout.tsx에서 err나서 주석 처리
 dataSlot="icon"
+
+4.2 Tweeting to Firestore
+파이어베이스에서 Cloud Firestore,storage 등록 후
+add firebase.ts
+import { getFirestore } from "firebase/firestore";
+import { getStorage } from "firebase/storage";
+추가
+
+post-tweet-form.tsx
+add onSubmit
+포스트 작성시 파이어베이스에 등록
