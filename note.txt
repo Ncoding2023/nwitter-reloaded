@@ -133,4 +133,14 @@ https://heroicons.dev
 LogOut기능을 home.tsx에서 layout.tsx로 변경
 
 
+4.1 Post Tweet Form
+accept 속성
+고유 파일 유형 지정자의 목록입니다.
+image/*는 "모든 이미지 파일"을 의미합니다.
+audio/*는 "모든 오디오 파일"을 의미합니다.
+video/*는 "모든 비디오 파일"을 의미합니다.
 
+add post-tweet-form.tsx
+글작성 및 이미지 파일 업로드
+layout.tsx에서 err나서 주석 처리
+dataSlot="icon"
