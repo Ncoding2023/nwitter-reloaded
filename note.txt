@@ -121,7 +121,16 @@ sendPasswordResetEmail 사용
 이메일로 비밀번호 재설정하는 버튼 추가
 쳇지피티를 사용하며 스타일 부분은 다른 버전으로 구현되어 있다.
 togglePopup으로 구현하며 주로 스타일 부분 작업
+add pwresetemil-btn.tsx 
+pwresetemil-btn 코드챌린지이므로 일단 주석처리
 
+20240820
+4.0 Navigation Bar 
+Heroicons
+https://heroicons.dev
+리액트 아이콘 사이트
+
+LogOut기능을 home.tsx에서 layout.tsx로 변경
 
 
 
