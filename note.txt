@@ -155,3 +155,19 @@ import { getStorage } from "firebase/storage";
 post-tweet-form.tsx
 add onSubmit
 포스트 작성시 파이어베이스에 등록
+
+
+20240822
+4.3 Uploading Images
+post-tweet-form.tsx
+add
+const locationRef
+const result = await uploadBytes(locationRef, file);
+const url = await getDownloadURL(result.ref);
+updateDoc(doc, { photo: url, });
+주요 특징
+부분 업데이트: updateDoc은 기존 문서의 일부 필드만 업데이트할 수 있습니다. 문서 전체를 덮어쓰지 않고 변경하고자 하는 부분만 수정할 수 있습니다.
+새 필드 추가: 업데이트할 때 문서에 없는 새로운 필드를 추가할 수 있습니다.
+필드 삭제: 필드를 삭제하려면 deleteField() 함수를 사용하여 해당 필드를 null로 설정할 수 있습니다.
+
+
