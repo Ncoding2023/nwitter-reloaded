@@ -197,3 +197,14 @@ add
 
 let unsubscribe : Unsubscribe | null = null;
 onSnapshot 무료 할당량이 빨리 소모됨. 주의
+
+4.6 Deleting Tweets
+삭제
+update
+post-tweet-form.tsx
+const locationRef = ref(storage, `tweets/${user.uid}/${doc.id}`);
+add
+tweet.tsx
+삭제버튼 추가 
+
+
