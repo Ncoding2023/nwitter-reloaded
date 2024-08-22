@@ -170,4 +170,23 @@ updateDoc(doc, { photo: url, });
 새 필드 추가: 업데이트할 때 문서에 없는 새로운 필드를 추가할 수 있습니다.
 필드 삭제: 필드를 삭제하려면 deleteField() 함수를 사용하여 해당 필드를 null로 설정할 수 있습니다.
 
+4.4 Fetching Timeline
+pwresetemil-btn.tsx- update(err 8개라 txt로 수정) 
+pwresetemil-btn.tsx.txt 
+
+작업이 끝나면 저장 꼭할 것
+add
+timeline.tsx
+tweet.tsx
+
+timeline.tsx
+tweet컴포넌트(태그)를 map방식으로 작성한 게시물 표시
+firebase/firestore에서 import
+const tweetsQuery = query(
+      collection(db, "tweets"),
+      orderBy("createdAt", "desc")
+
+tweet.tsx
+timeline.tsx에서 map방식으로 값을 받아서 출력
+
 
