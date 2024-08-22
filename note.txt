@@ -189,4 +189,11 @@ const tweetsQuery = query(
 tweet.tsx
 timeline.tsx에서 map방식으로 값을 받아서 출력
 
+4.5 Realtime Tweets
+실시간으로 표시
+onSnapshot 무료 할당량이 빨리 소모됨. 주의
+timeline.tsx
+add
 
+let unsubscribe : Unsubscribe | null = null;
+onSnapshot 무료 할당량이 빨리 소모됨. 주의
