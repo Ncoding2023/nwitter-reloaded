@@ -224,3 +224,10 @@ timeline -> tweet -> edit-tweet-form
 https://github.com/codribble/nwitter-reloaded/commit/cf7b9d503bf4bb15fdfabedf545c72c559eafd4a
 
 
+
+20240824
+5.0 User Avatar
+프로필 사진 추가
+update
+profile.tsx
+사진 업로드 작업
