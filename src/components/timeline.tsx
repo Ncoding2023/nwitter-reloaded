@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { styled } from "styled-components";
-import { collection, getDocs, limit, onSnapshot, orderBy, query } from "firebase/firestore";
+import { collection, limit, onSnapshot, orderBy, query } from "firebase/firestore";
 import { db } from "../firebase";
 import Tweet from "./tweet";
 import { Unsubscribe } from "firebase/auth";
@@ -31,18 +31,7 @@ export default function Timeline() {
         orderBy("createdAt", "desc"),
         limit(25)
       );
-      // const spanshot = await getDocs(tweetsQuery);
-      // const tweets = spanshot.docs.map((doc) => {
-      //   const { tweet, createdAt, userId, username, photo } = doc.data();
-      //   return {
-      //     tweet,
-      //     createdAt,
-      //     userId,
-      //     username,
-      //     photo,
-      //     id: doc.id,
-      //   };
-      // });
+      
       unsubscribe = await onSnapshot(tweetsQuery,(snapshot) => {
         const tweets = snapshot.docs.map((doc) => {
               const { tweet, createdAt, userId, username, photo } = doc.data();

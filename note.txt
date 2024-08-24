@@ -207,4 +207,20 @@ add
 tweet.tsx
 삭제버튼 추가 
 
+4.7 CodeChallenge_Edit
+add
+edit-tweet-form.tsx
+Edit버튼
+
+post-tweet-form.tsx
+tweet.tsx
+timeline.tsx
+세 파일을 참고
+순번)home-> post-tweet-form, timeline
+timeline -> tweet -> edit-tweet-form
+
+
+다른사람 작품 참고하고 코딩함.
+https://github.com/codribble/nwitter-reloaded/commit/cf7b9d503bf4bb15fdfabedf545c72c559eafd4a
+
 

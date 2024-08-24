@@ -1,8 +1,15 @@
-import { addDoc, collection, updateDoc } from "firebase/firestore";
-import { useState } from "react";
+import { addDoc, collection, doc, updateDoc } from "firebase/firestore";
+import { useState, useEffect } from "react";
 import { styled } from "styled-components";
 import { auth, db, storage } from "../firebase";
-import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
+import { deleteObject, getDownloadURL, ref, uploadBytes } from "firebase/storage";
+
+export interface EditITweet {
+  id: string;
+  photo?: string;
+  tweet: string;
+  setIsEditing: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
 const Form = styled.form`
   display: flex;
@@ -59,41 +66,44 @@ const SubmitBtn = styled.input`
   }
 `;
 
-export default function PostTweetForm() {
+export default function EditTweetForm({photo, tweet, id, setIsEditing}: EditITweet) {
   const [isLoading, setLoading] = useState(false);
-  const [tweet, setTweet] = useState("");
+  const [editTweet, setEditTweet] = useState(tweet);
   const [file, setFile] = useState<File | null>(null);
   const onChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setTweet(e.target.value);
+    setEditTweet(e.target.value);
   };
+
   const onFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { files } = e.target;
     if (files && files.length === 1) {
       setFile(files[0]);
     }
   };
-  const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+
+  const onEdit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const user = auth.currentUser;
-    if (!user || isLoading || tweet === "" || tweet.length > 180) return;
+    const ok = confirm("수정할려?");
+    if (!ok || !user || isLoading || editTweet === "" || tweet.length > 180) return;
     try {
       setLoading(true);
-      const doc = await addDoc(collection(db, "tweets"), {
-        tweet,
-        createdAt: Date.now(),
-        username: user.displayName || "Anonymous",
-        userId: user.uid,
+      const tweetRef = doc(db, "tweets",id);
+      updateDoc(tweetRef, {
+        tweet : editTweet,
       });
+      
       if (file) {
-        const locationRef = ref(storage, `tweets/${user.uid}/${doc.id}`);
+        const locationRef = ref(storage, `tweets/${user.uid}/${id}`);
         const result = await uploadBytes(locationRef, file);
         const url = await getDownloadURL(result.ref);
-        updateDoc(doc, {
+        updateDoc(tweetRef, {
           photo: url,
         });
       }
-      setTweet("");
+      setEditTweet("");
       setFile(null);
+      setIsEditing(false);
     } catch (e) {
       console.log(e);
     } finally {
@@ -102,26 +112,27 @@ export default function PostTweetForm() {
   };
 
   return (
-    <Form onSubmit={onSubmit}>
+    <Form onSubmit={onEdit}>
       <TextArea
         rows={5}
         maxLength={180}
         onChange={onChange}
-        value={tweet}
+        value={editTweet}
         placeholder="What is happening?"
       />
-      <AttachFileButton htmlFor="file">
-        {file ? "Photo added ㅇ" : "Add photo"}
+      <AttachFileButton htmlFor={`file${id}`}>
+        {file ? "Photo Edited ㅇ" : "Edit photo"}
       </AttachFileButton>
+
       <AttachFileInput
         onChange={onFileChange}
         type="file"
-        id="file"
+        id={`file${id}`}
         accept="image/*"
       />
       <SubmitBtn
         type="submit"
-        value={isLoading ? "Posting..." : "Post Tweet"}
+        value={isLoading ? "Editing..." : "Edit Tweet"}
       />
     </Form>
   );
