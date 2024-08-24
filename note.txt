@@ -207,6 +207,7 @@ add
 tweet.tsx
 삭제버튼 추가 
 
+20240824
 4.7 CodeChallenge_Edit
 add
 edit-tweet-form.tsx
@@ -224,10 +225,13 @@ timeline -> tweet -> edit-tweet-form
 https://github.com/codribble/nwitter-reloaded/commit/cf7b9d503bf4bb15fdfabedf545c72c559eafd4a
 
 
-
-20240824
 5.0 User Avatar
 프로필 사진 추가
 update
 profile.tsx
 사진 업로드 작업
+
+5.1 User's Timeline
+where("userId", "==", user?.uid) 조건으로 키값 선택하며 
+개발자 모드에서 err 링크로 이동하여 키값 save하여 firebase에서 설정
+timeline.tsx에서 오타 수정
