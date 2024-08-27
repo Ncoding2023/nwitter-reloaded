@@ -89,6 +89,7 @@ export default function EditTweetForm({photo, tweet, id, setIsEditing}: EditITwe
     try {
       setLoading(true);
       const tweetRef = doc(db, "tweets",id);
+      // console.log("tweetRef==",tweetRef);
       updateDoc(tweetRef, {
         tweet : editTweet,
       });

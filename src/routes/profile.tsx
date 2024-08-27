@@ -1,10 +1,11 @@
 import { styled } from "styled-components";
 import { auth, db, storage } from "../firebase";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useId } from "react";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { updateProfile } from "firebase/auth";
 import {
   collection,
+  doc,
   getDocs,
   limit,
   orderBy,
@@ -13,6 +14,7 @@ import {
 } from "firebase/firestore";
 import { ITweet } from "../components/timeline";
 import Tweet from "../components/tweet";
+import EditNameForm from "../components/edit-name-form";
 
 const Wrapper = styled.div`
   display: flex;
@@ -49,6 +51,17 @@ const Tweets = styled.div`
   width: 100%;
   flex-direction: column;
   gap: 10px;
+`;
+const EditNameBtn = styled.button`
+  background-color: blue;
+  color: white;
+  font-weight: 600;
+  border: 0;
+  font-size: 12px;
+  padding: 5px 10px;
+  text-transform: uppercase;
+  border-radius: 5px;
+  cursor: pointer;
 `;
 
 export default function Profile() {
@@ -93,14 +106,18 @@ export default function Profile() {
     setTweets(tweets);
   };
   useEffect(() => {
+    console.log(".tweets",user);
     fetchTweets();
   }, []);
+
+  const [isNameEditing, setIsNameEditing] = useState(false);
+  const onNameEdit = () => setIsNameEditing((prev) => !prev);
 
   return (
     <Wrapper>
       <AvatarUpload htmlFor="avatar">
         {Boolean(avatar) ? (
-          <AvatarImg src={avatar} />
+          <AvatarImg src={avatar ?? ""} />
         ) : (
           <svg
             // dataSlot="icon"
@@ -125,7 +142,13 @@ export default function Profile() {
         type="file"
         accept="image/*"
       />
+        {isNameEditing ? <EditNameForm 
+          username={user?.displayName ?? ""}
+          setIsNameEditing = {setIsNameEditing}
+        /> : null
+        } 
       <Name>{user?.displayName ?? "Anonymous"}</Name>
+      <EditNameBtn onClick={onNameEdit}> {isNameEditing ? "Cancel" : "Edit"}</EditNameBtn>
       <Tweets>
         {tweets.map((tweet) => (
           <Tweet key={tweet.id} {...tweet} />
