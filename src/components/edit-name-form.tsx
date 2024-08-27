@@ -61,7 +61,7 @@ export default function EditNameForm({
   const onEdit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const user = auth.currentUser;
-    const ok = confirm("이름변경?");
+    const ok = confirm("Would you like to change your name?");
     if (!ok || !user || isLoading || username === "" || username.length > 10)
       return;
     try {

@@ -62,7 +62,7 @@ const EditButton = styled.button`
 export default function Tweet({ username, photo, tweet, userId , id }: ITweet) {
   const user = auth.currentUser;
   const onDelete = async () => {
-    const ok = confirm("삭제할겨?");
+    const ok = confirm("Would you like to delete it?");
     if (!ok || user?.uid !== userId) return;
     try {
       await deleteDoc(doc(db, "tweets", id));

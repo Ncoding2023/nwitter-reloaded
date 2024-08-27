@@ -89,7 +89,7 @@ export default function EditTweetForm({
   const onEdit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const user = auth.currentUser;
-    const ok = confirm("수정할려?");
+    const ok = confirm("Would you like to edit it?");
     if (!ok || !user || isLoading || editTweet === "" || tweet.length > 180)
       return;
     try {
