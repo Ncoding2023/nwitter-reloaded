@@ -1,8 +1,8 @@
-import { addDoc, collection, doc, updateDoc } from "firebase/firestore";
-import { useState, useEffect } from "react";
+import { doc, updateDoc } from "firebase/firestore";
+import { useState } from "react";
 import { styled } from "styled-components";
 import { auth, db, storage } from "../firebase";
-import { deleteObject, getDownloadURL, ref, uploadBytes } from "firebase/storage";
+import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 
 export interface EditITweet {
   id: string;
@@ -66,7 +66,12 @@ const SubmitBtn = styled.input`
   }
 `;
 
-export default function EditTweetForm({photo, tweet, id, setIsEditing}: EditITweet) {
+export default function EditTweetForm({
+  /* photo, */
+  tweet,
+  id,
+  setIsEditing,
+}: EditITweet) {
   const [isLoading, setLoading] = useState(false);
   const [editTweet, setEditTweet] = useState(tweet);
   const [file, setFile] = useState<File | null>(null);
@@ -85,15 +90,16 @@ export default function EditTweetForm({photo, tweet, id, setIsEditing}: EditITwe
     e.preventDefault();
     const user = auth.currentUser;
     const ok = confirm("수정할려?");
-    if (!ok || !user || isLoading || editTweet === "" || tweet.length > 180) return;
+    if (!ok || !user || isLoading || editTweet === "" || tweet.length > 180)
+      return;
     try {
       setLoading(true);
-      const tweetRef = doc(db, "tweets",id);
+      const tweetRef = doc(db, "tweets", id);
       // console.log("tweetRef==",tweetRef);
       updateDoc(tweetRef, {
-        tweet : editTweet,
+        tweet: editTweet,
       });
-      
+
       if (file) {
         const locationRef = ref(storage, `tweets/${user.uid}/${id}`);
         const result = await uploadBytes(locationRef, file);

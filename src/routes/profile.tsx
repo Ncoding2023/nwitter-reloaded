@@ -1,11 +1,10 @@
 import { styled } from "styled-components";
 import { auth, db, storage } from "../firebase";
-import React, { useState, useEffect, useId } from "react";
+import React, { useState, useEffect } from "react";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import { updateProfile } from "firebase/auth";
 import {
   collection,
-  doc,
   getDocs,
   limit,
   orderBy,
